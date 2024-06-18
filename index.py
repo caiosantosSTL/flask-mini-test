@@ -8,8 +8,8 @@ app = Flask(__name__)
 def hello_world():
     return "<p>Hello, World!</p>"
 
-@app.route('/indexi')
-def indexi():
+@app.route('/index')
+def index():
     success_message = request.args.get('success_message', '')
     return render_template('index.html', success_messagex=success_message)
 
@@ -33,7 +33,7 @@ def form():
 def process_form():
     info = request.form['info']
     print(f'Informações recebidas: {info}')
-    return redirect(url_for('indexi', success_message='Dados enviados com sucesso!'))
+    return redirect(url_for('index', success_message='Dados enviados com sucesso!'))
     #return 'Informações recebidas com sucesso!'
 
 # -----------------------
